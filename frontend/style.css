@@ -1,0 +1,40 @@
+* { box-sizing: border-box; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: #0f172a;
+  color: #e2e8f0;
+  display: flex;
+  justify-content: center;
+  padding: 40px 16px;
+  margin: 0;
+}
+
+.container { width: 100%; max-width: 480px; }
+h1 { font-size: 1.6rem; margin-bottom: 4px; }
+.subtitle { color: #94a3b8; margin: 0 0 24px; font-size: 0.9rem; }
+
+#task-form { display: flex; gap: 8px; margin-bottom: 20px; }
+#task-input {
+  flex: 1; padding: 10px 12px; border-radius: 6px;
+  border: 1px solid #334155; background: #1e293b; color: #e2e8f0;
+}
+button {
+  padding: 10px 16px; border: none; border-radius: 6px;
+  background: #6366f1; color: white; cursor: pointer; font-weight: 600;
+}
+button:hover { background: #4f46e5; }
+
+#task-list { list-style: none; padding: 0; margin: 0; }
+#task-list li {
+  display: flex; align-items: center; justify-content: space-between;
+  background: #1e293b; padding: 10px 14px; border-radius: 6px; margin-bottom: 8px;
+}
+#task-list li.done span.title { text-decoration: line-through; color: #64748b; }
+.task-actions button { background: transparent; color: #94a3b8; padding: 4px 8px; font-weight: 400; }
+.task-actions button:hover { color: #ef4444; }
+
+footer { margin-top: 30px; font-size: 0.8rem; color: #64748b; display: flex; align-items: center; gap: 6px; }
+.dot { width: 8px; height: 8px; border-radius: 50%; background: #64748b; display: inline-block; }
+.dot.ok { background: #22c55e; }
+.dot.fail { background: #ef4444; }
