@@ -86,5 +86,53 @@ devops-taskflow/
 
 
 
+## Phase 0 — Manual Application Deployment
 
+Phase 0 focuses on getting the application running manually before introducing DevOps automation and infrastructure tools.
+
+### Completed
+
+- Set up an Ubuntu Server VM as the application server.
+- Connected to the VM remotely using SSH.
+- Installed the required baseline tools.
+- Cloned the `DevOps-TaskFlow` repository from GitHub using SSH.
+- Configured the application environment on the VM.
+- Installed the Node.js backend dependencies.
+- Configured PostgreSQL for the application.
+- Started the Node.js application manually.
+- Verified that the application works locally on the VM.
+- Verified that the application is accessible from the Fedora host through the VM's IP address.
+
+### Current Architecture
+
+```text
+Fedora Host
+     │
+     │ HTTP :3000
+     ↓
+Ubuntu Server VM
+192.168.56.101
+     │
+     ↓
+Node.js Backend
+     │
+     ↓
+PostgreSQL
+```
+
+The application is currently started manually using the Node.js runtime. No systemd, Nginx, Docker, CI/CD, or cloud infrastructure has been introduced yet.
+
+### Verification
+
+The application was successfully accessed from the host machine using:
+
+```text
+http://192.168.56.101:3000
+```
+
+This confirms that the application is running successfully on the Ubuntu VM and is reachable from the host machine.
+
+### Next Step
+
+The next phase will move from manual execution to Linux service management by running the application as a `systemd` service under a dedicated non-root user.
 
