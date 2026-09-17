@@ -2,15 +2,40 @@
 
 **DevOps TaskFlow** is a full-stack Task Manager application that I am building and evolving throughout my **DevOps learning journey**.
 
- I will use the same application to practice each phase of the roadmap and gradually transform it from a simple local application into a production-style system.
- 
- 
- 
-This README is a **living document**. I will update it after completing each roadmap phase with what I learned, what I implemented, the problems I faced, and how the project evolved.
+The same application is used across the roadmap to practice real-world DevOps concepts incrementally — starting with manual deployment on Linux and gradually evolving into a production-style system with automation, cloud infrastructure, CI/CD, containers, Kubernetes, monitoring, GitOps, and security.
+
+> **This is a living project.**
+> Each roadmap phase adds a new technical layer to the same application and is documented with the implementation, commands, decisions, problems, and lessons learned.
 
 ---
 
-The project will evolve through the following journey:
+## 🎯 Project Goals
+
+This project is designed to help me:
+
+* Apply DevOps concepts to a real application instead of studying them in isolation.
+* Understand how an application moves from development to production.
+* Practice Linux administration, automation, networking, containers, cloud, and infrastructure.
+* Build an end-to-end DevOps workflow step by step.
+* Keep practical documentation of the decisions and problems encountered along the way.
+
+---
+
+## 🏗️ Application
+
+DevOps TaskFlow is a simple Task Manager consisting of:
+
+| Layer    | Technology                      |
+| -------- | ------------------------------- |
+| Backend  | Node.js + Express               |
+| Database | PostgreSQL                      |
+| Frontend | HTML + CSS + Vanilla JavaScript |
+
+The application itself is intentionally simple. The main focus of the project is **how the application is deployed, operated, automated, monitored, secured, and evolved using DevOps practices**.
+
+---
+
+## 🗺️ DevOps Journey
 
 ```text
 Application
@@ -33,7 +58,7 @@ Terraform
     ↓
 Ansible
     ↓
-Kubernetes    
+Kubernetes
     ↓
 Monitoring & Logging
     ↓
@@ -42,97 +67,136 @@ GitOps
 DevSecOps
 ```
 
-Each phase will add a new layer to the same project.
+Each phase builds on the previous one rather than creating a separate project.
 
 ---
 
-## 🏗️ Application Stack
+## 📌 Project Progress
 
-The initial application consists of:
-
-- **Backend:** Node.js + Express
-- **Database:** PostgreSQL
-- **Frontend:** HTML + CSS + Vanilla JavaScript
-
-The application is a simple Task Manager that provides a practical application to deploy, containerize, automate, monitor, and secure throughout the DevOps journey.
+* [x] **Phase 0 — Manual Application Deployment**
+* [x] **Phase 1 — Linux Fundamentals & systemd**
+* [ ] **Phase 2 — Bash Scripting**
+* [ ] **Phase 3 — Git & GitHub**
+* [ ] **Phase 4 — Networking**
+* [ ] **Phase 5 — Docker**
+* [ ] **Phase 6 — AWS Cloud**
+* [ ] **Phase 7 — CI/CD**
+* [ ] **Phase 8 — Terraform**
+* [ ] **Phase 9 — Ansible**
+* [ ] **Phase 10 — Kubernetes**
+* [ ] **Phase 11 — Monitoring & Logging**
+* [ ] **Phase 12 — GitOps**
+* [ ] **Phase 13 — DevSecOps**
 
 ---
-## 🗺️ Future Project Struc
+
+## 📂 Repository Structure
+
 ```text
 devops-taskflow/
-├── backend/                  # Phase 0.5 — Application
-├── frontend/                 # Phase 0.5 — Application
+├── backend/                  # Node.js + Express application
+├── frontend/                 # Frontend application
 │
-├── scripts/                  # Phase 2 — Bash
+├── scripts/                  # Bash automation scripts
+├── deploy/                   # Deployment and server configuration
 │
-├── deploy/                   # Phase 1 & 4 — Linux / Networking
+├── docs/                     # Project documentation
+│   ├── phase-0-manual-deployment.md
+│   └── phase-1-linux-systemd.md
 │
-├── docker-compose.yml        # Phase 5 — Docker
-├── .dockerignore             # Phase 5 — Docker
+├── docker-compose.yml        # Docker / multi-container setup
+├── .dockerignore
+├── Jenkinsfile               # CI/CD pipeline
+├── infra/                    # Terraform infrastructure
+├── ansible/                  # Ansible configuration
+├── k8s/                      # Kubernetes manifests
 │
-├── Jenkinsfile               # Phase 7 — CI/CD
-│
-├── infra/                    # Phase 8 — Terraform
-│
-├── ansible/                  # Phase 9 — Ansible
-│
-├── k8s/                      # Phase 10 — Kubernetes
-│
-├── SECURITY.md               # Phase 13 — DevSecOps
-│
+├── SECURITY.md               # Security documentation
 ├── .gitignore
 └── README.md
 ```
 
+> Some directories and files will be introduced gradually as their corresponding roadmap phases are completed.
 
+---
 
-## Phase 0 — Manual Application Deployment
+## 🖥️ Current Environment
 
-Phase 0 focuses on getting the application running manually before introducing DevOps automation and infrastructure tools.
-
-### Completed
-
-- Set up an Ubuntu Server VM as the application server.
-- Connected to the VM remotely using SSH.
-- Installed the required baseline tools.
-- Cloned the `DevOps-TaskFlow` repository from GitHub using SSH.
-- Configured the application environment on the VM.
-- Installed the Node.js backend dependencies.
-- Configured PostgreSQL for the application.
-- Started the Node.js application manually.
-- Verified that the application works locally on the VM.
-- Verified that the application is accessible from the Fedora host through the VM's IP address.
-
-### Current Architecture
+The application is currently deployed on an **Ubuntu Server VM** and managed using Linux system tools.
 
 ```text
 Fedora Host
      │
-     │ HTTP :3000
+     │ HTTP:3000
      ↓
 Ubuntu Server VM
-192.168.56.101
      │
-     ↓
-Node.js Backend
+     ├── systemd
+     │      ↓
+     │   Node.js
+     │      ↓
+     │   PostgreSQL
      │
-     ↓
-PostgreSQL
+     └── Application
 ```
 
-The application is currently started manually using the Node.js runtime. No systemd, Nginx, Docker, CI/CD, or cloud infrastructure has been introduced yet.
+---
 
-### Verification
+## 📚 Documentation
 
-The application was successfully accessed from the host machine using:
+Implementation details are kept separately from this README so that the repository overview remains concise.
+
+### Completed Phases
+
+* [Phase 0 — Manual Application Deployment](docs/phase-0-manual-deployment.md)
+* [Phase 1 — Linux Fundamentals & systemd](docs/phase-1-linux-systemd.md)
+
+Each phase documents:
+
+* What was implemented
+* Commands used
+* Why each major step was necessary
+* Problems encountered
+* How they were solved
+* Verification and results
+* What was learned
+
+---
+
+## 🚀 Current Status
+
+
+
+The application has moved from being manually started to being managed by `systemd` and runs under a dedicated non-root `nodeapp` user.
+
+
+---
+
+## 🔮 Final Goal
+
+By the end of the roadmap, DevOps TaskFlow is intended to evolve from:
 
 ```text
-http://192.168.56.101:3000
+Simple Application
+       ↓
+Linux Server
+       ↓
+Automated Deployment
+       ↓
+Dockerized Application
+       ↓
+AWS Infrastructure
+       ↓
+CI/CD Pipeline
+       ↓
+Infrastructure as Code
+       ↓
+Kubernetes
+       ↓
+Monitoring + Logging
+       ↓
+GitOps + DevSecOps
 ```
 
-This confirms that the application is running successfully on the Ubuntu VM and is reachable from the host machine.
-
-### Next Step
-
-The next phase will move from manual execution to Linux service management by running the application as a `systemd` service under a dedicated non-root user.
+The goal is not just to deploy the application, but to understand and document the **complete lifecycle of running an application in a production-style DevOps environment**.
 
