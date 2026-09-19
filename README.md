@@ -75,7 +75,7 @@ Each phase builds on the previous one rather than creating a separate project.
 
 * [x] **Phase 0 — Manual Application Deployment**
 * [x] **Phase 1 — Linux Fundamentals & systemd**
-* [ ] **Phase 2 — Bash Scripting**
+* [x] **Phase 2 — Bash Scripting**
 * [ ] **Phase 3 — Git & GitHub**
 * [ ] **Phase 4 — Networking**
 * [ ] **Phase 5 — Docker**
@@ -101,8 +101,8 @@ devops-taskflow/
 ├── deploy/                   # Deployment and server configuration
 │
 ├── docs/                     # Project documentation
-│   ├── phase-0-manual-deployment.md
-│   └── phase-1-linux-systemd.md
+│   
+│   
 │
 ├── docker-compose.yml        # Docker / multi-container setup
 ├── .dockerignore
@@ -150,6 +150,8 @@ Implementation details are kept separately from this README so that the reposito
 
 * [Phase 0 — Manual Application Deployment](docs/phase-0-manual-deployment.md)
 * [Phase 1 — Linux Fundamentals & systemd](docs/phase-1-linux-systemd.md)
+* [Phase 2 — Bash Scripting](docs/phase-2-bash-scripting.md)
+
 
 Each phase documents:
 
